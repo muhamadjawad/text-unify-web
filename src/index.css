@@ -11,6 +11,25 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Light theme colors */
+  --color-bg: #FFFFFF;
+  --color-primary: #4A90E2;
+  --color-text: #222222;
+  --color-accent: #F5A623;
+  --color-bg-secondary: #F5F6FA;
+  --color-border: #E0E0E0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #121212;
+    --color-primary: #4A90E2;
+    --color-text: #EEEEEE;
+    --color-accent: #F5A623;
+    --color-bg-secondary: #232323;
+    --color-border: #333333;
+  }
 }
 
 a {
