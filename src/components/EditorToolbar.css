@@ -1,0 +1,32 @@
+.editor-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--color-bg-secondary);
+  padding: 0.5rem 0.5rem;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid var(--color-border);
+  border-bottom: none;
+  align-items: center;
+}
+
+.toolbar-btn {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.toolbar-btn.active,
+.toolbar-btn:focus {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.toolbar-btn:hover {
+  background: var(--color-accent);
+  color: #fff;
+} 

@@ -1,0 +1,54 @@
+.textunify-container {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.textunify-input-wrapper,
+.textunify-output-wrapper {
+  flex: 1 1 320px;
+  max-width: 50%;
+  min-width: 280px;
+  box-sizing: border-box;
+}
+
+.textunify-input {
+  width: 100%;
+  min-height: 50vh;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.textunify-output {
+  width: 100%;
+  min-height: 50vh;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  box-sizing: border-box;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 900px) {
+  .textunify-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .textunify-input-wrapper,
+  .textunify-output-wrapper {
+    max-width: 100%;
+  }
+} 

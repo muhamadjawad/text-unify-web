@@ -1,0 +1,1 @@
+export type ToolbarAction = 'bold' | 'italic' | 'underline' | 'asterisk' | 'emoji';
