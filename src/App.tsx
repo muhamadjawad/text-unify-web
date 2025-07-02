@@ -9,7 +9,6 @@ const App = () => {
     <div >
       <Navbar />
       <TextUnify />
-      <p>{'asasaslkn'}</p>
     </div>
   )
 }

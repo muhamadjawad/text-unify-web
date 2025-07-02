@@ -8,8 +8,12 @@ const TextUnify: React.FC = () => {
 
   return (
     <div className="textunify-container">
-      <Editor value={input} onChange={setInput} />
-      <TextOutput value={input} />
+      <div className="textunify-input-wrapper">
+        <Editor value={input} onChange={setInput} />
+      </div>
+      <div className="textunify-output-wrapper">
+        <TextOutput value={input} />
+      </div>
     </div>
   );
 };
