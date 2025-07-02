@@ -1,10 +1,12 @@
 .textunify-container {
   display: flex;
   gap: 2rem;
-  margin: 2rem 0;
+  padding: 0.5rem 2rem;
+  /* margin: 2rem 0 0 0; */
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 
 .textunify-input-wrapper,
@@ -13,6 +15,16 @@
   max-width: 50%;
   min-width: 280px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.editor-wrapper,
+.textunify-output {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .textunify-input {
@@ -47,8 +59,9 @@
     flex-direction: column;
     gap: 1.5rem;
   }
+
   .textunify-input-wrapper,
   .textunify-output-wrapper {
     max-width: 100%;
   }
-} 
+}
