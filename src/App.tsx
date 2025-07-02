@@ -12,7 +12,7 @@ const App = () => {
   }, [isDark]);
 
   return (
-    <div style={{ backgroundColor: 'red' }} >
+    <div >
       <Navbar isDark={isDark} onToggleTheme={() => setIsDark((prev) => !prev)} />
 
       <TextUnify />
