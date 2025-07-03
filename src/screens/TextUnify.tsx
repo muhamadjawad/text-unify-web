@@ -4,7 +4,7 @@ import TextOutput from '@/components/TextInput';
 import './TextUnify.css';
 
 const TextUnify: React.FC = () => {
-  const [input, setInput] = React.useState('yhe output');
+  const [input, setInput] = React.useState('');
 
   return (
     <div className="textunify-container">

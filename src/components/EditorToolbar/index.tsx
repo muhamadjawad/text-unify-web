@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaBold, FaItalic, FaUnderline, FaAsterisk, FaSmile } from 'react-icons/fa';
 import './EditorToolbar.css';
 import type { ToolbarAction } from '@/types';
 
-
 type EditorToolbarProps = {
     onAction: (action: ToolbarAction) => void;
+    activeFormats?: { [key in ToolbarAction]?: boolean };
 };
 
 const actions: { action: ToolbarAction; icon: React.ReactNode; label: string }[] = [
@@ -16,22 +16,14 @@ const actions: { action: ToolbarAction; icon: React.ReactNode; label: string }[]
     { action: 'emoji', icon: <FaSmile />, label: 'Emoji' },
 ];
 
-const EditorToolbar: React.FC<EditorToolbarProps> = ({ onAction }) => {
-    const [active, setActive] = useState<ToolbarAction | null>(null);
-
-    const handleClick = (action: ToolbarAction) => {
-        setActive(action);
-        onAction(action);
-        setTimeout(() => setActive(null), 300);
-    };
-
+const EditorToolbar: React.FC<EditorToolbarProps> = ({ onAction, activeFormats = {} }) => {
     return (
         <div className="editor-toolbar">
             {actions.map(({ action, icon, label }) => (
                 <button
                     key={action}
-                    className={`toolbar-btn${active === action ? ' active' : ''}`}
-                    onClick={() => handleClick(action)}
+                    className={`toolbar-btn${activeFormats[action] ? ' active' : ''}`}
+                    onClick={() => onAction(action)}
                     type="button"
                     aria-label={label}
                 >

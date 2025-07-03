@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import EditorToolbar from '../EditorToolbar';
 import './Editor.css';
 import type { ToolbarAction } from '@/types';
@@ -9,54 +9,72 @@ type EditorProps = {
 };
 
 const Editor: React.FC<EditorProps> = ({ value, onChange }) => {
-    const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+    const editorRef = useRef<HTMLDivElement>(null);
+    const [activeFormats, setActiveFormats] = useState<{ [key in ToolbarAction]?: boolean }>({});
 
-    //   Formatting actions
+    // Sync contenteditable with value
+    useEffect(() => {
+        if (editorRef.current && editorRef.current.innerText !== value) {
+            editorRef.current.innerText = value;
+        }
+    }, [value]);
+
+    // Detect active formats on selection change
+    const detectActiveFormats = () => {
+        const formats: { [key in ToolbarAction]?: boolean } = {};
+        if (document.queryCommandState('bold')) formats.bold = true;
+        if (document.queryCommandState('italic')) formats.italic = true;
+        if (document.queryCommandState('underline')) formats.underline = true;
+        // Asterisk is custom, not native
+        setActiveFormats(formats);
+    };
+
+    useEffect(() => {
+        document.addEventListener('selectionchange', detectActiveFormats);
+        return () => document.removeEventListener('selectionchange', detectActiveFormats);
+    }, []);
+
+    const handleInput = (e: React.FormEvent<HTMLDivElement>) => {
+        onChange(e.currentTarget.innerText);
+    };
+
     const handleAction = (action: ToolbarAction) => {
-        if (!textareaRef.current) return;
-        const textarea = textareaRef.current;
-        const start = textarea.selectionStart;
-        const end = textarea.selectionEnd;
-        let newValue = value;
-        let insertBefore = '', insertAfter = '';
+        if (!editorRef.current) return;
+        editorRef.current.focus();
+    
         switch (action) {
             case 'bold':
-                insertBefore = '**'; insertAfter = '**';
+                document.execCommand('bold');
                 break;
             case 'italic':
-                insertBefore = '*'; insertAfter = '*';
+                document.execCommand('italic');
                 break;
             case 'underline':
-                insertBefore = '<u>';
-                insertAfter = '</u>';
-                break;
-            case 'asterisk':
-                insertBefore = '***'; insertAfter = '***';
+                document.execCommand('underline');
                 break;
             case 'emoji':
-                insertBefore = '😊'; insertAfter = '';
+                document.execCommand('insertText', false, '😊');
+                break;
+            case 'asterisk':
+                document.execCommand('strikeThrough');
                 break;
             default:
                 break;
         }
-        newValue = value.slice(0, start) + insertBefore + value.slice(start, end) + insertAfter + value.slice(end);
-        onChange(newValue);
-        setTimeout(() => {
-            textarea.focus();
-            textarea.setSelectionRange(start + insertBefore.length, end + insertBefore.length);
-        }, 0);
     };
+    
 
     return (
         <div className="editor-wrapper">
-            <EditorToolbar onAction={handleAction} />
-            <textarea
-                ref={textareaRef}
+            <EditorToolbar onAction={handleAction} activeFormats={activeFormats} />
+            <div
+                ref={editorRef}
                 className="editor-textarea"
-                value={value}
-                onChange={e => onChange(e.target.value)}
-                placeholder="Type your text here..."
-                style={{ height: '250px', width: '100%', resize: 'none' }}
+                contentEditable
+                suppressContentEditableWarning
+                spellCheck={true}
+                onInput={handleInput}
+                style={{ height: '250px', width: '100%', resize: 'none', overflowY: 'auto', outline: 'none' }}
             />
         </div>
     );
