@@ -1,16 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react';
 import type { ToolbarAction } from '@/types';
 
-
 const useTextEditor = ({ value, onChange }: { value: string; onChange: (val: string) => void }) => {
-
     const editorRef = useRef<HTMLDivElement>(null);
     const [activeFormats, setActiveFormats] = useState<{ [key in ToolbarAction]?: boolean }>({});
 
-    // Sync contenteditable with value
+    // Sync contenteditable with value (now HTML)
     useEffect(() => {
-        if (editorRef.current && editorRef.current.innerText !== value) {
-            editorRef.current.innerText = value;
+        if (editorRef.current && editorRef.current.innerHTML !== value) {
+            editorRef.current.innerHTML = value;
         }
     }, [value]);
 
@@ -30,7 +28,7 @@ const useTextEditor = ({ value, onChange }: { value: string; onChange: (val: str
     }, []);
 
     const handleInput = (e: React.FormEvent<HTMLDivElement>) => {
-        onChange(e.currentTarget.innerText);
+        onChange(e.currentTarget.innerHTML);
     };
 
     const handleAction = (action: ToolbarAction) => {
@@ -57,8 +55,6 @@ const useTextEditor = ({ value, onChange }: { value: string; onChange: (val: str
                 break;
         }
     };
-
-
 
     return { handleAction, activeFormats, editorRef, handleInput }
 }
