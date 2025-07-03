@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBold, FaItalic, FaUnderline, FaAsterisk, FaSmile } from 'react-icons/fa';
+import { FaBold, FaItalic, FaUnderline, FaStrikethrough, FaSmile } from 'react-icons/fa';
 import './EditorToolbar.css';
 import type { ToolbarAction } from '@/types';
 
@@ -12,7 +12,7 @@ const actions: { action: ToolbarAction; icon: React.ReactNode; label: string }[]
     { action: 'bold', icon: <FaBold />, label: 'Bold' },
     { action: 'italic', icon: <FaItalic />, label: 'Italic' },
     { action: 'underline', icon: <FaUnderline />, label: 'Underline' },
-    { action: 'asterisk', icon: <FaAsterisk />, label: 'Asterisk' },
+    { action: 'asterisk', icon: <FaStrikethrough />, label: 'Strikethrough' },
     { action: 'emoji', icon: <FaSmile />, label: 'Emoji' },
 ];
 
