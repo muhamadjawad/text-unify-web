@@ -13,22 +13,22 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Light theme colors */
-  --color-bg: #FFFFFF;
-  --color-primary: #4A90E2;
-  --color-text: #222222;
-  --color-accent: #F5A623;
-  --color-bg-secondary: #F5F6FA;
-  --color-border: #E0E0E0;
+  --color-bg: #F8FAFC;
+  --color-primary: #38BDF8;
+  --color-text: #222F3E;
+  --color-accent: #F472B6;
+  --color-bg-secondary: #E0F2FE;
+  --color-border: #BAE6FD;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #121212;
-    --color-primary: #4A90E2;
-    --color-text: #EEEEEE;
-    --color-accent: #F5A623;
-    --color-bg-secondary: #232323;
-    --color-border: #333333;
+    --color-bg: #0F172A;
+    --color-primary: #38BDF8;
+    --color-text: #F1F5F9;
+    --color-accent: #F472B6;
+    --color-bg-secondary: #1E293B;
+    --color-border: #334155;
   }
 }
 

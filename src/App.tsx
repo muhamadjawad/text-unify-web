@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import Navbar from '@/components/Navbar';
 import TextUnify from '@/screens/TextUnify';
+import Footer from '@/components/Footer';
 
 const App = () => {
   const [isDark, setIsDark] = React.useState(false);
@@ -16,6 +17,7 @@ const App = () => {
       <Navbar isDark={isDark} onToggleTheme={() => setIsDark((prev) => !prev)} />
 
       <TextUnify />
+      <Footer />
     </div>
   )
 }
