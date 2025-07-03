@@ -1,5 +1,5 @@
 import React from 'react';
-import EditorToolbar from './EditorToolbar';
+import EditorToolbar from '../EditorToolbar';
 import './Editor.css';
 import type { ToolbarAction } from '@/types';
 

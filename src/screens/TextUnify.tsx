@@ -1,6 +1,6 @@
 import React from 'react';
 import Editor from '@/components/Editor';
-import TextOutput from '@/components/TextOutput';
+import TextOutput from '@/components/TextInput';
 import './TextUnify.css';
 
 const TextUnify: React.FC = () => {

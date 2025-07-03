@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '@/assets/images/logo.jpg';
-import ToggleButton from './ToggleButton';
+import ToggleButton from '../ToggleButton';
 import './Navbar.css';
 
 type NavbarProps = {
