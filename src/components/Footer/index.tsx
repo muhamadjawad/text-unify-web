@@ -3,18 +3,28 @@ import './Footer.css';
 import devPhoto from '@/assets/images/dev.jpg';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiReact } from 'react-icons/si';
+import { INFO } from '@/utils/info';
+import PkFlag from '@/assets/images/pakistan.png'
 
 const DeveloperInfo = () => (
   <div className="footer__devcontent">
     <img src={devPhoto} alt="Muhammad Jawad" className="footer__avatar" />
     <div className="footer__details">
-      <div className="footer__name">Muhammad Jawad</div>
-      <div className="footer__title">Frontend Developer</div>
+      <div className="footer__name">
+        Muhammad Jawad&nbsp;
+        <img
+          src={PkFlag}
+          alt="Pakistan Flag"
+          className="footer__flag"
+        />
+      </div>
+
+      <div className="footer__title">{`Frontend Developer`}</div>
       <div className="footer__socials">
-        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <a href={INFO.MY_LINKEDIN} aria-label="LinkedIn" target="__blank" rel="noopener noreferrer"  >
           <FaLinkedin />
         </a>
-        <a href="#" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+        <a href={INFO.MY_GITHUB} aria-label="GitHub" target="__blank" rel="noopener noreferrer">
           <FaGithub />
         </a>
       </div>
@@ -29,7 +39,7 @@ const PoweredBy = () => (
       <span>{`React + TypeScript`}</span>
     </div>
     <a
-      href="https://github.com/your-repo-url"
+      href={INFO.APP_GIT_REPO}
       target="_blank"
       rel="noopener noreferrer"
       className="techstack__github"

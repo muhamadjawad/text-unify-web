@@ -59,7 +59,7 @@
 .footer__avatar {
   width: 6vw;
   height: 6vw;
-  border-radius: 8px;
+  border-radius: 100px;
   object-fit: cover;
   /* border: 3px solid var(--color-accent); */
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
@@ -74,12 +74,22 @@
   font-size: 1.3rem;
   font-weight: bold;
   color: var(--color-bg);
-  font-family: 'Open Sans';
+  font-family: 'Poppins', sans-serif;
 }
+
+.footer__flag {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  vertical-align: middle;
+  /* margin-left: 1px; */
+}
+
 
 .footer__title {
   font-size: 0.9rem;
   color: var(--color-bg-secondary);
+  font-family: 'Inter', sans-serif
 }
 
 .footer__socials {
@@ -89,7 +99,7 @@
 }
 
 .footer__socials a {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--color-bg);
   transition: color 0.2s, transform 0.2s;
 }
