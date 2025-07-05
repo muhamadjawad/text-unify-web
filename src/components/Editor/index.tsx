@@ -35,7 +35,7 @@ const Editor: React.FC<EditorProps> = ({ value, onChange }) => {
                 suppressContentEditableWarning
                 spellCheck={true}
                 onInput={handleInput}
-                style={{ height: '250px', width: '100%', resize: 'none', overflowY: 'auto', outline: 'none' }}
+                style={{}}
             />
         </div>
     );

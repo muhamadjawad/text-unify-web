@@ -1,0 +1,32 @@
+.textOutput-wrapper {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    height: '100%';
+    flex: 1;
+}
+
+.textunify-output {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    font-size: 1.1rem;
+    padding: 1rem;
+    /* border: 1px solid var(--color-border); */
+    border-radius: 8px;
+    background: var(--editor-bg);
+    color: var(--color-text);
+    box-sizing: border-box;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+/* height: 50vh, */
+
+/* REMOVE these two — they force over-expansion */
+/* min-height: 100%; */
+/* height: 100vh; */
+
+/* style={{ minHeight: '50vh', width: '100%', wordBreak: 'break-all', fontFamily: 'monospace', overflow: 'auto', flex: 1 }} */

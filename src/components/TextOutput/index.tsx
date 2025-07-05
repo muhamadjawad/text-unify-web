@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaRegCopy } from 'react-icons/fa';
 import { useUnicodeText } from '@/hooks/useUnicodeText';
+import './TextOutput.css'
 
 type TextOutputProps = {
   value: string;
@@ -16,11 +17,11 @@ const TextOutput: React.FC<TextOutputProps> = ({ value }) => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      <div className="editor-toolbar" style={{ justifyContent: 'flex-end', minHeight: 44, height: 44 }}>
+    <div className='textOutput-wrapper' >
+      <div className="editor-toolbar" style={{ justifyContent: 'flex-end' }}>
         <button
           className="toolbar-btn"
-          style={{ marginLeft: 'auto' }}
+          // style={{ marginLeft: 'auto' }}
           onClick={handleCopy}
           aria-label="Copy Unicode Text"
           type="button"
@@ -30,7 +31,6 @@ const TextOutput: React.FC<TextOutputProps> = ({ value }) => {
       </div>
       <div
         className="textunify-output"
-        style={{ minHeight: '50vh', width: '100%', wordBreak: 'break-all', fontFamily: 'monospace', overflow: 'auto', flex: 1 }}
       >
         {unicodeValue}
       </div>
