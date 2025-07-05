@@ -15,7 +15,6 @@ const App = () => {
   return (
     <div >
       <Navbar isDark={isDark} onToggleTheme={() => setIsDark((prev) => !prev)} />
-
       <TextUnify />
       <Footer />
     </div>
