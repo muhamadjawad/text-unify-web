@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import devPhoto from '@/assets/images/dev.jpg';
+import devPhoto from '@/assets/images/dev.png';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiReact } from 'react-icons/si';
 import { INFO } from '@/utils/info';
@@ -55,10 +55,12 @@ const Footer = () => (
     <div className="footer__top">
       <div className="footer__section">
         <div className="footer__label">About Dev</div>
+        <div className="vertical__separator" />
         <DeveloperInfo />
       </div>
       <div className="footer__section">
         <div className="footer__label">About App</div>
+        <div className="vertical__separator" />
         <PoweredBy />
       </div>
     </div>
