@@ -12,6 +12,7 @@
 /* Light theme variables (default) */
 :root {
   --color-primary: #7c3aed;
+  --color-secondary: #DAA520;
   /* Purple */
   --color-accent: #ede9fe;
   /* Light Purple for hover */
@@ -25,12 +26,15 @@
   --gradient-bg: linear-gradient(to bottom right, #7c3aed, #a78bfa);
   --navbar-bg: var(--color-primary);
   --toggle-btn-bg: #f3f0ff;
+  --toolbar-bg: #ffffff;
+  --color-toolbar-btn: black;
   --editor-bg: #ffffff;
 }
 
 /* Dark theme variables */
 .dark {
   --color-primary: #7c3aed;
+  --color-secondary: #DAA520;
   --color-accent: #4c1d95;
   --color-bg: #1A1A1A;
   --color-bg-secondary: rgba(30, 30, 40, 0.6);
@@ -40,6 +44,8 @@
   --navbar-bg: var(--color-primary);
   /* #1e1b29; */
   --toggle-btn-bg: #1e1b29;
+  --toolbar-bg: #222222;
+  --color-toolbar-btn: #ffffff;
   --editor-bg: #000000
 }
 
