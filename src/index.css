@@ -30,14 +30,15 @@
 
 /* Dark theme variables */
 .dark {
-  --color-primary: #a78bfa;
+  --color-primary: #7c3aed;
   --color-accent: #4c1d95;
   --color-bg: #1e1b29;
   --color-bg-secondary: rgba(30, 30, 40, 0.6);
   --color-text: #f1f5f9;
   --color-border: #4b5563;
   --gradient-bg: linear-gradient(to bottom right, #4c1d95, #6d28d9);
-  --navbar-bg: #1e1b29;
+  --navbar-bg: var(--color-primary);
+    /* #1e1b29; */
   --toggle-btn-bg: #1e1b29;
   --editor-bg: #000000
 }
