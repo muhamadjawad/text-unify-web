@@ -23,7 +23,7 @@
   --color-text: #1f2937;
   /* Dark text */
   --color-border: #d1d5db;
-  --gradient-bg: linear-gradient(to bottom right, #7c3aed, #a78bfa);
+  --gradient-bg: linear-gradient(to bottom right, #7c3aed, #581ebb);
   --navbar-bg: var(--color-primary);
   --toggle-btn-bg: #f3f0ff;
   --toolbar-bg: #ffffff;
