@@ -15,7 +15,7 @@
   /* Purple */
   --color-accent: #ede9fe;
   /* Light Purple for hover */
-  --color-bg: #f3f0ff;
+  --color-bg: #F8F8F8;
   /* Editor & Output Background */
   --color-bg-secondary: rgba(255, 255, 255, 0.5);
   /* For glassy UI */
@@ -32,13 +32,13 @@
 .dark {
   --color-primary: #7c3aed;
   --color-accent: #4c1d95;
-  --color-bg: #1e1b29;
+  --color-bg: #1A1A1A;
   --color-bg-secondary: rgba(30, 30, 40, 0.6);
   --color-text: #f1f5f9;
   --color-border: #4b5563;
   --gradient-bg: linear-gradient(to bottom right, #4c1d95, #6d28d9);
   --navbar-bg: var(--color-primary);
-    /* #1e1b29; */
+  /* #1e1b29; */
   --toggle-btn-bg: #1e1b29;
   --editor-bg: #000000
 }
@@ -47,7 +47,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--color-accent);
+  background: var(--color-bg);
   color: var(--color-text);
   display: flex;
   flex-direction: column;
