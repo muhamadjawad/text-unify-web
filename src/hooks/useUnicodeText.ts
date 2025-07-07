@@ -48,9 +48,10 @@ export function useUnicodeText(html: string): string {
       });
 
       // Block-level elements create line breaks after
-      if (['DIV', 'P'].includes(el.tagName)) {
+      if (['DIV', 'P'].includes(el.tagName) && !out.endsWith('\n')) {
         out += '\n';
       }
+
 
       return out;
     }
