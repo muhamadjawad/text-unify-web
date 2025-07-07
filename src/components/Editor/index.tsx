@@ -1,7 +1,6 @@
 import React from 'react';
 import EditorToolbar from '../EditorToolbar';
 import './Editor.css';
-import type { ToolbarAction } from '@/types';
 import useTextEditor from '@/hooks/useTextEditor';
 import Picker from '@emoji-mart/react';
 import data from '@emoji-mart/data';
@@ -12,7 +11,7 @@ type EditorProps = {
 };
 
 const Editor: React.FC<EditorProps> = ({ value, onChange }) => {
-    const { handleAction, activeFormats, editorRef, handleInput, showEmojiPicker, setShowEmojiPicker, insertEmoji, toolbarRef } = useTextEditor({ value, onChange });
+    const { handleAction, activeFormats, editorRef, handleInput, showEmojiPicker, insertEmoji, toolbarRef } = useTextEditor({ value, onChange });
 
     return (
         <div className="editor-wrapper" style={{ position: 'relative' }}>

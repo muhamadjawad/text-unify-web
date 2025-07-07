@@ -1,4 +1,3 @@
-import React from 'react';
 import './Footer.css';
 import devPhoto from '@/assets/images/dev.png';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
